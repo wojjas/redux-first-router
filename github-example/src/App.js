@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 import AppShell from "./AppShell";
-import TopBar from "./components_bak/TopBar";
+import TopBar from "./components/TopBar";
 
 // Contains 'Home', 'User', 'About, and 'NotFound'
+// import * as components from "./components";
 import * as components from "./components";
 
 const App = ({ page }) => {
