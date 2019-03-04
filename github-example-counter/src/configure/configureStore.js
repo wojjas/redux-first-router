@@ -6,7 +6,8 @@ import page from "../reducers/pageReducer";
 const routesMap = {
   HOME: "/",
   USER: "/user/:id",
-  ABOUT: "/about"
+  ABOUT: "/about",
+  COUNTER: "/counter"
 };
 
 export default function configureStore(preloadedState) {

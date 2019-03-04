@@ -4,6 +4,7 @@ const components = {
   HOME: "Home",
   USER: "User",
   ABOUT: "About",
+  COUNTER: "Counter",
   [NOT_FOUND]: "NotFound"
 };
 

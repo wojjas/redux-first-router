@@ -38,6 +38,10 @@ const TopBar = () => {
         {" "}
         <StyledLink to="/user/2">User 2</StyledLink>{" "}
       </StyledLi>
+      <StyledLi>
+        {" "}
+        <StyledLink to="/counter">Counter</StyledLink>{" "}
+      </StyledLi>
     </StyledUl>
   );
 };
