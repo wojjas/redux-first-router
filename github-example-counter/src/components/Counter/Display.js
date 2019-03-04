@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Display = ({ count }) => {
-  return <h2>Current Count: {count}</h2>;
+  return <h4>Current Count: {count}</h4>;
 };
 
 const mapStateToProps = state => {
   return {
-    count: state.count
+    count: state.counter.count
   };
 };
 
