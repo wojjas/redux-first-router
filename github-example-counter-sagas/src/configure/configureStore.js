@@ -3,6 +3,7 @@ import { connectRoutes } from "redux-first-router";
 
 import page from "../reducers/pageReducer";
 import counter from "../reducers/counterReducer";
+import users from "../reducers/usersReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const routesMap = {
@@ -19,7 +20,8 @@ export default function configureStore(preloadedState) {
   const rootReducer = combineReducers({
     page,
     location: reducer,
-    counter
+    counter,
+    users
   });
   const middlewares = applyMiddleware(middleware);
   const enhancers = compose(
