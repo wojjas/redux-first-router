@@ -8,6 +8,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const routesMap = {
   HOME: "/",
   USER: "/user/:id",
+  USERS: "/users",
   ABOUT: "/about",
   COUNTER: "/counter"
 };

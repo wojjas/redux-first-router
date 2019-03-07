@@ -32,6 +32,10 @@ const TopBar = () => {
       </StyledLi>
       <StyledLi>
         {" "}
+        <StyledLink to="/users">Users</StyledLink>{" "}
+      </StyledLi>
+      <StyledLi>
+        {" "}
         <StyledLink to="/user/1">User 1</StyledLink>{" "}
       </StyledLi>
       <StyledLi>
