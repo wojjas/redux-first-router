@@ -1,13 +1,17 @@
-export const getAllUsers = () => {
-  return new Promise((resolve, reject) => {
+export const getAllUsersAsync = (ms = 1500) => {
+  return new Promise((resolve, reject) =>
     setTimeout(() => {
-      console.log("All users gotten!");
-      resolve(["Tom", "Sally", "John"]);
-    }, 1000);
-  });
+      if (flipACoin()) {
+        return resolve(["Tom", "Sally", "John", "Adam", "Eve"]);
+      } else {
+        return reject(new Error("Failed to get any!"));
+      }
+    }, ms)
+  );
 };
 
 export const getAllUsersSync = () => {
-  console.log("All users gotten!");
   return ["Tom", "Sally", "John"];
 };
+
+const flipACoin = () => Math.floor(Math.random() * 2) == 0;

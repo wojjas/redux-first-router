@@ -10,11 +10,11 @@ const components = {
 };
 
 export default (state = "HOME", action = {}) => {
-  console.log(
-    `pageReducer returns action.type: ${action.type}, 
-    component: ${components[action.type]} old state: ${state}`,
-    components[action.type] || state
-  );
+  // console.log(
+  //   `pageReducer returns action.type: ${action.type},
+  //   component: ${components[action.type]} old state: ${state}`,
+  //   components[action.type] || state
+  // );
 
   return components[action.type] || state;
 };

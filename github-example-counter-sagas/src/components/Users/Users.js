@@ -5,28 +5,38 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { getAllUsers } from "../../actions/users";
+import { getAllUsersSync, getAllUsersAsync } from "../../actions/users";
 
 class Users extends React.Component {
-  handleGetAllUsers = () => {
-    console.log("Request all users");
-    //Dispatch action!
-    this.props.getAllUsers();
+  handleGetAllUsersSync = () => {
+    //Dispatch plain Redux action!
+    this.props.getAllUsersSync();
+  };
+  handleGetAllUsersAsync = () => {
+    //Dispatch plain Redux action BUT one that redux-sagas is "watching" (waiting for / listening to / subscribing)!
+    this.props.getAllUsersAsync();
   };
 
   render() {
-    const { users } = this.props;
+    const { users, message } = this.props;
 
     return (
       <div>
         <h3>Users</h3>
         <input
           type="button"
-          value="Get All Users"
-          onClick={this.handleGetAllUsers}
+          value="Get All Users Sync"
+          onClick={this.handleGetAllUsersSync}
+        />
+        <input
+          type="button"
+          value="Get All Users Async"
+          onClick={this.handleGetAllUsersAsync}
         />
         <hr />
         {users && users.length}
+        {/* {message && <strong>{message}</strong>} */}
+        {message}
       </div>
     );
   }
@@ -34,11 +44,13 @@ class Users extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    users: state.users
+    users: state.users.users,
+    message: state.users.message
   };
 };
 const mapDispatchToProps = {
-  getAllUsers
+  getAllUsersSync,
+  getAllUsersAsync: getAllUsersAsync
 };
 
 export default connect(
