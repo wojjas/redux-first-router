@@ -34,8 +34,7 @@ class Users extends React.Component {
           onClick={this.handleGetAllUsersAsync}
         />
         <hr />
-        {users && users.length}
-        {/* {message && <strong>{message}</strong>} */}
+        {users && users.map(user => <p>{user}</p>)}
         {message}
       </div>
     );

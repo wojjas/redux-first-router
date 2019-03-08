@@ -4,7 +4,11 @@ export const getAllUsersAsync = (ms = 1500) => {
       if (flipACoin()) {
         return resolve(["Tom", "Sally", "John", "Adam", "Eve"]);
       } else {
-        return reject(new Error("Failed to get any!"));
+        return reject(
+          new Error(
+            "Failed to get any users! (this is by chance as server flips a coin)"
+          )
+        );
       }
     }, ms)
   );
